@@ -8,9 +8,14 @@ close(HTM);
 
 my $time = "quoteTime";
 my $range = index($s, $time);
-my $date = substr($s, $range + 20, 10);
+#my $date = substr($s, $range + 20, 10);
+#print "date=".($date)."\n";
 
-print "date=".($date)."\n";
+my $year = substr($s, $range + 20, 4);
+my $mm = substr($s, $range + 25, 2);
+my $dd = substr($s, $range + 28, 2);
+
+print "date=".($year).($mm).($dd)."\n";
 print "type=bloomberg_USDTWD\n";
 
 my $last = "Previous Close:";

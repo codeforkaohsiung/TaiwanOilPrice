@@ -1,6 +1,6 @@
 my $s;
 
-open(HTM, '20130521Dubai') or die "$!";
+open(HTM, '20140419Dubai') or die "$!";
 while (defined($line = <HTM>)) {
 	$s = $s.$line;
 }
@@ -17,13 +17,15 @@ my $range = index($s, $last);
 
 #print substr($s, $range + 30, 8);
 
-my $date = substr($s, $range + 30, 8);
+my $date = substr($s, $range + 36, 8);
 
 #print "\n\n";
 
 #print substr($s, $range + 57, 6);
 
-my $price = substr($s, $range + 57, 6);
+#my $price = substr($s, $range + 57, 6);
+
+my $price = substr($s, $range + 63, 6);
 
 my $tar = "Dubai ".$date." ".$price;
 
